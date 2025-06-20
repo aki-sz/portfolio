@@ -1,0 +1,492 @@
+@charset "utf-8";
+
+body {
+	overflow-y: scroll;
+	font-family: "Poppins", "Zen Kaku Gothic New", "游ゴシック", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+	color: #313131;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:visited {
+	color: inherit;
+	text-decoration: none;
+}
+
+#container {
+	width: 100%;
+	min-height: 100vh;
+}
+
+header {
+	width: 100%;
+	height: 12vh;
+	display: flex;
+	align-items: center;
+	/ border-bottom: 1px solid #CCC;
+	color: #F7F8F8;
+	background: #313131;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	transition: height 0.3s ease;
+}
+
+@media screen and (min-height: 780px) {
+	header {
+		height: 8vh;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	header.expanded {
+		height: 35vh;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	header.expanded {
+		height: 45vh;
+	}
+}
+
+
+#header_contents_wrapper {
+	width: 75vw;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+@media screen and (max-width: 540px) {
+	#header_contents_wrapper {
+		width: 95vw;
+	}
+}
+
+header h2 {
+	font-family: "Anton";
+	font-size: clamp(1.3rem, 3.2vw, 2.7rem);
+	letter-spacing: 0.05rem;
+	text-wrap: nowrap;
+}
+
+@media screen and (max-width: 540px) {
+	header h2 {
+		position: absolute;
+		top: 3vh;
+	}
+}
+
+header ul {
+	display: flex;
+	justify-content: space-between;
+	width: 30%;
+	font-size: clamp(0.7rem, 1.2vw, 1rem);
+}
+
+@media screen and (max-width: 1024px) {
+	header ul {
+		width: 40%;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	header ul {
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
+		margin-top: 8vh;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+		font-size: 0.9rem;
+	}
+
+	header ul.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	header li {
+		margin-bottom: 20%;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	header ul {
+		margin-top: 10vh;
+	}
+
+	header li {
+		margin-bottom: 15%;
+	}
+}
+
+
+footer {
+	border-top: 1px solid #CCC;
+	font-weight: 200;
+	width: 100%;
+	height: 10vh;
+}
+
+#footer_contents {
+	margin: 0.5% auto;
+	width: 75vw;
+}
+
+main {
+	width: 70vw;
+	margin: 0 auto;
+	padding-top: 12vh;
+}
+
+@media screen and (min-height: 780px) {
+	main {
+		width: 75vw;
+		padding-top: 8vh;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	main {
+		width: 90vw;
+	}
+}
+
+/* ハンバーガー */
+@media screen and (min-width: 768px) {
+	.hamburger {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.hamburger {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		cursor: pointer;
+		width: 32px;
+		height: 24px;
+		z-index: 10;
+	}
+
+	.hamburger span {
+		/*3本の線を作る*/
+		transition: all .3s;
+		position: absolute;
+		height: 2px;
+		background-color: #F7F8F8;
+		width: 100%;
+		z-index: 10;
+	}
+
+	.hamburger span:nth-of-type(1) {
+		/*上の線の位置*/
+		top: 4px;
+	}
+
+	.hamburger span:nth-of-type(2) {
+		/*真ん中の線の位置*/
+		top: 12px;
+	}
+
+	.hamburger span:nth-of-type(3) {
+		/*下の線の位置*/
+		top: 20px;
+	}
+
+	.hamburger.open span:nth-of-type(1) {
+		/*openのとき、上の線を右斜めにする*/
+		top: 10px;
+		transform: translateY(6px) rotate(-33deg);
+	}
+
+	.hamburger.open span:nth-of-type(2) {
+		/*真ん中の線を消す*/
+		opacity: 0;
+	}
+
+	.hamburger.open span:nth-of-type(3) {
+		/*下の線を左斜めにする*/
+		top: 22px;
+		transform: translateY(-6px) rotate(33deg);
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.hamburger {
+		top: 18px;
+		right: 15px;
+	}
+}
+
+
+/* トップページ */
+#top_image {
+	width: 60%;
+	min-width: 280px;
+	margin: 4% auto 2%;
+}
+
+#introduction_text {
+	margin-bottom: 5%;
+}
+
+#name_akiyoshi {
+	margin-bottom: 2%;
+	font-size: 1.4rem;
+}
+
+#name_akiyoshi span {
+	font-size: 2rem;
+}
+
+#introduction_text p {
+	margin-bottom: 2%;
+	font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1024px) {
+	#name_akiyoshi, #introduction_text p {
+		margin-bottom: 3%;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	#name_akiyoshi, #introduction_text p {
+		margin-bottom: 5%;
+	}
+
+	#introduction_text p {
+	font-size: 1.3rem;
+}
+}
+
+/* graphicとweb_design */
+
+#midashi {
+	margin-top: 1%;
+	margin-bottom: 4%;
+}
+
+#midashi h1 {
+	font-weight: 400;
+	font-size: clamp(2.8rem, 3.5vw, 3rem);
+	letter-spacing: -0.05rem;
+	margin-bottom: 0.8%;
+}
+
+#midashi h2 {
+	font-size: clamp(1.2rem, 1.7vw, 1.4rem);
+	letter-spacing: -0.1rem;
+}
+
+.sakuhin {
+	font-size: 	clamp(1.5rem, 2.4vw, 2rem);
+	margin-bottom: 1%;
+}
+
+.koumoku ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.koumoku li {
+	width: calc(100%/3 - 3%);
+	margin-bottom: 5%;
+	position: relative;
+	overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+	.koumoku li {
+		width: calc(100%/2 - 3%);
+	}
+}
+
+.koumoku p {
+	position: absolute;
+	opacity: 0;
+	transition: all 0.3s ease;
+	top: 80%;
+	left: 3%;
+	color: #F7F8F8;
+	font-weight: 700;
+	font-size: 1.3rem;
+}
+
+.koumoku p.top {
+	opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+	.koumoku p.top {
+		opacity: 0;
+	}
+}
+
+.koumoku li img {
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	transition: all 0.3s ease;
+}
+
+.koumoku li:hover img {
+	transform: scale(1.1);
+}
+
+.koumoku li img.top {
+	filter: brightness(0.4);
+}
+
+@media screen and (max-width: 1024px) {
+	.koumoku li:hover img {
+		transform: scale(1);
+	}
+
+	.koumoku li img.top {
+		filter: brightness(1);
+	}
+}
+
+#moms img {
+	object-position: 0 20%;
+}
+
+.spacer {
+	visibility: hidden
+}
+
+/* 作品ページ */
+
+#midashi_sakuhin h1 {
+	font-weight: 500;
+	font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+	letter-spacing: -0.2rem;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.swiper {
+	margin-bottom: 2%;
+}
+
+.swiper-pagination-bullet {
+	background-color: #CCC !important;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: #F7F8F8 !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	color: #313131 !important;
+	background: #F7F8F8;
+	border-radius: 3px;
+	padding: 4% 3%;
+}
+
+.swiper-slide {
+	position: relative;
+	width: 100%;
+	/* 横幅は親要素に依存 */
+	padding-top: 56.25%;
+	/* 16:9 の比率（9 ÷ 16 = 0.5625） */
+	overflow: hidden;
+}
+
+.swiper-slide img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+	object-fit: contain;
+	/* 縦横比を保ちつつ全体が見える */
+	background-color: #000000;
+	/* 余白部分の背景色（任意） */
+}
+
+#description_wrapper {
+	margin-bottom: 5%;
+}
+
+.sakuhin_description {
+	margin-bottom: 1%;
+	font-size: 1.1rem;
+}
+
+#desc_illust {
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+	.sakuhin_description {
+		margin-bottom: 2%;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.sakuhin_description {
+		margin-bottom: 3%;
+	}
+}
+
+.no_swiper {
+	position: relative;
+	width: 100%;
+	/* 横幅は親要素に依存 */
+	padding-top: 56.25%;
+	/* 16:9 の比率（9 ÷ 16 = 0.5625） */
+	overflow: hidden;
+}
+
+.no_swiper img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	transform: translate(-50%, -50%);
+	object-fit: contain;
+	/* 縦横比を保ちつつ全体が見える */
+}
+
+#link_website {
+	font-size: 1.2rem;
+	text-decoration: underline;
+	margin-bottom: 2%;
+}
+
+#kunrenkou img {
+	object-position: 17% 0;
+}
+
+#back {
+	display: none;
+	font-weight: bold;
+	text-decoration: underline;
+	font-size: 0.9rem;
+	margin-bottom: 5%;
+	/ font-family: "Anton";
+}
+
+@media screen and (max-width: 540px) {
+	#back {
+		display: block;
+	}
+}
