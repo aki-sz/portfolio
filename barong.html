@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>AKIYOSHI SUZUKI</title>
+	<link href="css/reset.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="icon" href="favicon.ico">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<div id="header_contents_wrapper">
+				<h2><a href="index.html">AKIYOSHI SUZUKI</a></h2>
+				<ul>
+					<li><a href="index.html">introduction</a></li>
+					<li><a href="graphic.html">graphic</a></li>
+					<li><a href="website.html">web_design</a></li>
+				</ul>
+				<div id="hamburger" class="hamburger">
+					<span></span><span></span><span></span>
+				</div>
+			</div>
+		</header>
+		<main>
+			<div id="midashi">
+				<h1>graphic</h1>
+				<h2>グラフィックデザイン作品</h2>
+			</div>
+			<div id="midashi_sakuhin">
+				<h1>ENAK FRIDAY フライヤー用イラスト</h1>
+			</div>
+			<div class="swiper">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+					<!-- Slides -->
+					<div class="swiper-slide">
+						<div class="image-container">
+							<a href="images/graphic/client/barong/barong_enak_finished.png" data-fancybox="barong"
+								data-type="image" data-caption="フライヤー用イラスト">
+								<img src="images/graphic/client/barong/barong_enak_finished.png" />
+							</a>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="image-container">
+							<a href="images/graphic/client/barong/example.png" data-fancybox="casette" data-type="image"
+								data-caption="使用例（フライヤーデザインは別の方です）">
+								<img src="images/graphic/client/barong/example.png" />
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div id="description_wrapper">
+				<div class="sakuhin_description">
+					<h3>&#9632;使用ツール</h3>
+					<p>Adobe Illustrator</p>
+				</div>
+				<div class="sakuhin_description">
+					<h3>&#9632;制作期間</h3>
+					<p>10時間</p>
+				</div>
+				<div class="sakuhin_description">
+					<h3>&#9632;サイズ</h3>
+					<p>可変（SVG形式での納品）</p>
+				</div>
+				<div class="sakuhin_description">
+					<h3>&#9632;概要/コンセプト</h3>
+					<p>インドネシアのクラブミュージックイベント「ENAK FRIDAY」のフライヤー用イラストを制作しました。
+					</p>
+					<p>バリ島の神「バロン」をベースに、頭部へスピーカーを組み込み、クラブミュージックのイベントであることを表現。
+					</p>
+					<p>左右のスピーカーはこのイベントの以前の会場と現在の会場に設置されている機材をモチーフにし、イベントの歴史や現場感を表現しています。
+					</p>
+					<p>資料収集、手書きでのラフ制作を経て、Illustratorのペンツールでベクター化するまでを一貫して制作しました。
+					</p>
+					<p>図形ツールを控えて手書き感を重視し、輪郭線を強調することで視認性を高めています。
+					</p>
+					<p>本作品は実際に採用され、告知のメインビジュアルとして使用されています。
+					</p>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div id="footer_contents">
+				<p>&copy;Akiyoshi Suzuki 2025</p>
+			</div>
+		</footer>
+	</div> <!--container-->
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="js/layout.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+	<script>
+		const swiper = new Swiper('.swiper', {
+			loop: true,
+			effect: 'fade',
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			autoHeight: false,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			scrollbar: {
+				el: '.swiper-scrollbar',
+			},
+			speed: 500,
+			autoplay: false,
+			freeMode: true,
+			freeModeMomentum: false,
+		});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('[data-fancybox]').fancybox({
+				loop: true, // 複数画像の際に最初と最後をループさせる
+				toolbar: false, // ツールバーの表示・非表示
+				smallBtn: true, // 小さいCloseボタンの表示
+				keyboard: true, // キーボード操作を有効にするか
+				arrows: true, // 矢印の表示
+				iframe: { // iframeの処理
+					preload: false //iframeのプリロード
+				},
+				animationEffect: 'fade',       // 拡大時のアニメーションをフェードに変更
+				transitionEffect: 'fade'       // ページ切り替え時のトランジションもフェードに
+			});
+		});
+	</script>
+
+</body>
+
+</html>
